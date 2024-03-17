@@ -69,7 +69,6 @@ class production_log():
                                 'Save - this button allows you to save the changes you have made in the text box into the file it self.\n\n'
                                 'Back - this allows you to go back to the Home Page.')
 
-        font = ("Helvetica", 18, "bold")
         font2 = ("Helvetica", 23, "bold")
 
         text_box = tk.Text(window, width=140, height=33)
