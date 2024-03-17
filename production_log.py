@@ -32,7 +32,6 @@ class production_log():
             text = filename.read()
             text_box.delete(1.0, END)
             text_box.insert(END, text)
-            window.deiconify()
 
 
         def save_change():
