@@ -1,0 +1,9 @@
+NAME                           QUANTITY             PRICE PER PIECE                TOTAL                         
+Hanna                          150                  5                              750                           
+Pan                            200                  5                              1000                          
+Spanish                        100                  5                              500                           
+
+
+
+===============================================================================================================================
+Total Amount Produced: 2250  kjasdjasdjasndansidnasn
