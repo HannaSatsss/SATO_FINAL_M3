@@ -243,8 +243,16 @@ class production_inventory:
                 window.deiconify()
 
         def home_page():
-            window.destroy()
-            os.system('python home_page.py')
+            confirmation = simpledialog.askstring('Confirmation', 'Are you sure you want to go back?\nYour entries would not be saved,\nand it would be lost. Type yes or no.')
+            if confirmation == None:
+                pass
+            if confirmation.upper() == 'YES':
+                window.destroy()
+                os.system('python home_page.py')
+            elif  confirmation.upper() == 'NO':
+                pass
+            else:
+                messagebox.showerror('Error', 'Invalid input.')
 
         def question():
             messagebox.showinfo('Functions',
