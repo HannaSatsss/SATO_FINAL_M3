@@ -86,7 +86,7 @@ class production_inventory:
 
         def clear():
             window.withdraw()
-            answer = simpledialog.askstring('Confirmation', 'Do you want to save the data into a text file? \nType either Yes or No')
+            answer = simpledialog.askstring('Confirmation', 'Do you want to clear the data? \nType Yes or No')
 
             if answer == None:
                 window.deiconify()
@@ -94,7 +94,9 @@ class production_inventory:
 
             if answer.upper() == 'Yes'.upper():
                 for item in tree.get_children():
+                    item_val = tree.item(item)['values']
                     tree.delete(item)
+                    del product_dic[str(item_val[0])]
                 clear_text()
                 window.deiconify()
 
@@ -171,8 +173,7 @@ class production_inventory:
 
         def delete():
             window.withdraw()
-            answer = simpledialog.askstring('Confirmation',
-                                            'Do you want to save the data into a text file? \nType either Yes or No')
+            answer = simpledialog.askstring('Confirmation', 'Do you want to delete this entry? \nType Yes or No')
             window.deiconify()
 
             if answer.upper() == 'Yes'.upper():
@@ -194,7 +195,7 @@ class production_inventory:
 
         def save():
             window.withdraw()
-            answer = simpledialog.askstring('Confirmation','Do you want to save the data into a text file? \nType either yes or no.')
+            answer = simpledialog.askstring('Confirmation','Do you want to save the data into a text file? \nType Yes or No.')
 
             if answer == None:
                 window.deiconify()
@@ -220,8 +221,7 @@ class production_inventory:
                 file_path = f'Production_Records/record{current_date}.txt'
 
                 if os.path.exists(file_path):
-                    messagebox.showerror('Error',
-                                         'Todays record has already been made. \nEdit the contents of the file in the Production Log.')
+                    messagebox.showerror('Error', 'Todays record has already been made. \nEdit the contents of the file in the Production Log.')
                     window.deiconify()
                 else:
                     with open(file_path, 'w') as file:
