@@ -230,7 +230,7 @@ class production_inventory:
                         for value in all_val:
                             line = '{:<30} {:<20} {:<30} {:<30}\n'.format(*value)
                             file.write(line)
-                        file.write("\n\n\n===============================================================================================================================\n")
+                        file.write("\n\n\n============================================================================================================================================\n")
                         file.write(f"Total Amount Produced: {total_calc}")
                         messagebox.showinfo('File Saved', f"Data saved successfully to {file_path}")
                         window.deiconify()
